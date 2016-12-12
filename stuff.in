@@ -1,0 +1,46 @@
+/run/initialize
+
+/vis/disable
+/vis/open OGLSX 1000x1000-0+0
+/vis/drawVolume
+#/vis/scene/add/trajectories smooth
+/vis/viewer/set/viewpointThetaPhi 90 180
+
+/vis/scene/add/axes 0 0 0 200 mm
+#/vis/viewer/set/style surface
+
+#/vis/modeling/trajectories/create/drawByParticleID
+
+
+/vis/scene/endOfEventAction accumulate  100
+
+
+/gps/particle neutron
+#/gun/particle gamma
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0 0 -.9 m
+/gps/pos/halfx 0.1 m
+/gps/pos/halfy 0.1 m
+/gps/ene/type User
+/gps/hist/type energy
+/control/execute Watt_neutron_pdf.gdat
+/gps/direction 0 0 1
+
+#inner scoring mesh
+
+/score/create/boxMesh Inner_Scoring_Sheet
+/score/mesh/boxSize .15 .15 0.005 m
+/score/mesh/nBin 30 30 1
+/score/mesh/translate/xyz 0 0 0.25 m
+/score/quantity/flatSurfaceCurrent Surface_Current 0
+/score/close
+/score/colorMap/floatMinMax
+#/score/drawProjection Scoring_Sheet Surface_Current
+
+
+
+
+/run/beamOn 250000
+
+#/score/drawProjection Scoring_Sheet Surface_Current
