@@ -3,7 +3,7 @@ Basic shielding designed to measure energy attenuation and particle path deviati
 
 This file is a highly edited version of the Geant4 built-in example B4.
 
-All of the source code files can be found in the B4d/src folder. Each source file has a list of the headers that it uses at the beginning of the file. The only header that I remember editing was PGA2.hh, so I'll upload that one. The rest should be standard Geant4 headers that you can find online. here is an example of a header for the cylinder class G4Tubs.hh https://www-zeuthen.desy.de/geant4/geant4.9.3.b01/G4Tubs_8hh-source.html
+All of the source code files can be found in the B4d/src folder. Each source file has a list of the headers that it uses at the beginning of the file. The headers can be found in the "include" folder. The only header that I remember editing was PGA2.hh, so I'll upload that one. The rest should be standard Geant4 headers that you can find online. here is an example of a header for the cylinder class G4Tubs.hh https://www-zeuthen.desy.de/geant4/geant4.9.3.b01/G4Tubs_8hh-source.html
 
 Once you have the source code and headers copied over, you'll want to create a new directory where you will build your executable. mine is called "ex". Go into "ex" and type "cmake ../B4d". This should compile the source code into "ex". Once it is done, type "make" while in "ex" to create the executable file. It should be name "exampleB4d".
 
